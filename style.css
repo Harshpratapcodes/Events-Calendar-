@@ -1,0 +1,361 @@
+body {
+    font-family: "poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #474a55;
+    position: relative;
+   }
+.go-to-container{
+   display: flex;
+   justify-content: space-between;
+   background-color: #609b89;
+   border-radius: 10px;
+   box-shadow: 0 0 30px #123f46;
+   overflow: hidden;
+   max-width: 810px;
+   color: white;
+   padding: 20px 15px 20px 15px;
+   margin: 40px 0 40px 0;
+   width: 810px;
+}
+.l-goto{
+   display: flex;
+   width: 35%;
+   justify-content: space-between;
+}
+#select-month , #select-year{
+   border-radius: 10px;
+   width: 100px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   background-color:#e2f0ee;
+
+}
+#goto{
+   background-color: #609b89;
+   border-radius: 10px;
+   color: white;
+   border: none;
+   font-weight: bold;
+   width: 40px;
+   height: 30px;
+   font-size: 15px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+#to-day{
+   background-color: #609b89;
+   border-radius: 10px;
+   color: white;
+   border: none;
+   font-weight: bold;
+   width: 60px;
+   height: 30px;
+   font-size: 15px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+#goto:hover , #to-day:hover{
+   background-color: white;
+   color: rgb(159, 51, 163);
+}
+
+#select-month:hover , #select-year:hover{
+   background-color: white;
+   color: rgb(159, 51, 163);
+}
+
+.container{
+   display: flex;
+   width: 80%; 
+   max-width: 900px;
+   gap: 20px;
+}
+.calendar {
+   background-color: #609b89;
+   border-radius: 10px;
+   box-shadow: 0 0 30px #123f46;
+   overflow: hidden;
+   width: 300px;
+   color: white;
+   padding: 20px;
+}
+
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+}
+.btn {
+   cursor: pointer;
+   width: 14.28%;
+   text-align: center;
+   padding: 10px 0;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+#month-year {
+   font-weight: bold;
+   font-size: 20px;
+}
+.weekdays, .days {
+   display: flex;
+   flex-wrap: wrap;
+}
+.days {
+   height: 210px;
+}
+.weekdays div, .days div {
+   width: 14.28%;
+   text-align: center;
+   padding: 10px 0;
+   border-radius: 5px;
+}
+.days div {
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+.days div:hover {
+   background-color: white;
+   color: rgb(159, 51, 163);
+}
+.days .today {
+   background-color: rgb(124, 214, 139);
+   color: white;
+}
+.prev-date, .next-date {
+   color: #a3a3a3;
+}
+.btn:hover {
+   background-color: #e6e6e6;
+   color: rgb(159, 51, 163);
+}
+
+
+.left, .right {
+   flex: 1; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 20px;
+   position: relative; /* . */
+   min-width: 40%;
+}
+
+.left {
+   border-right: 1px solid #fff;
+}
+.left .event-list {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   margin-top: 20px;
+}
+.today-date {
+   width: 100%;
+   display: flex;
+   flex-grow: 1;
+   flex-shrink: 1;
+   flex-basis: auto;
+   flex-wrap: wrap;
+   text-transform: capitalize;
+   justify-content: center;
+   align-items: center;  
+ }
+ .event-date , .event-day {
+   width: 100%;
+   padding: 5px;
+   text-align: center;
+ }
+
+ .right .today-date .event-day {
+   font-size: 2rem;
+   font-weight: 500;
+
+ }
+ .right .today-date .event-date {
+   font-size: 1rem;
+   font-weight: 400;
+   color: #878895;
+ }
+
+ .add-sign {
+  position: absolute;   /*  c  */
+   bottom: 20px;
+   right:20px;
+   background-color: #609b89;
+   color: white;
+   border: none;
+   border-radius: 50%;
+   width: 50px;
+   height: 50px;
+   font-size: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+.add-sign:hover{
+   background-color: white;
+   color: rgb(159, 51, 163);
+}
+
+.add-event-wrapper {
+   display: none;
+   position: absolute;
+   top: 40%;
+   left: 10%;
+   background: white;
+   padding: 15px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   width: 250px;
+   z-index: 1;
+   max-height: fit-content;
+   transition: transform 0.3s ease;
+}
+.active{
+   background-color: rgb(236, 194, 116);
+}
+.has-event{
+   text-decoration: underline;
+}
+
+.events {
+   margin-top: 20px;
+}
+
+.event-item {
+   background: #e0e0e0;
+   padding: 5px;
+   margin: 5px 0;
+   border-radius: 4px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.add-event-input input {
+   width: 100%;
+   padding: 8px;
+   margin-top: 5px;
+   border: 1px solid #ddd;
+}
+
+
+.add-event-header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 0 10px 0;
+}
+
+.add-event-btn {
+   background: #007bff;
+   color: white;
+   border: none;
+   padding: 10px;
+   width: 100%;
+   cursor: pointer;
+   margin: 10px 0;
+}
+.events {
+   margin-top: 20px;
+   width: 100%;
+}
+
+.delete-btn {
+   background: rgb(236, 86, 6);
+   color: white;
+   border: none;
+   padding: 5px;
+   border-radius: 3px;
+   cursor: pointer;
+}
+
+@media (max-width: 925px) {
+   .right {
+       position: relative;
+       width: 100%;
+   }
+
+   .add-sign {
+       top: 300px; 
+       right: 15px;
+   }
+}
+
+@media (max-width: 925px) {
+   .container {
+       flex-direction: column;
+       align-items: center;
+   }
+
+   .left {
+       border-right: none; 
+       border-bottom: 1px solid #fff; 
+       width: 100%;
+       min-width: 100%;
+       min-height: fit-content;
+   }
+
+   .right {
+       width: 100%;
+       min-width: 100%;
+       min-height: 80%;
+   }
+}
+
+@media (max-width: 925px) {
+   .calendar {
+      width: 100%;
+   }
+   .go-to-container{
+      width: 80%;
+   }
+}
+
+@media (max-width: 925px) {
+   .add-event-wrapper {
+       left: 50%;
+       top: 250px;
+       transform: translate(-50%, -50%);
+       width: 60%;
+   }
+}
+
+@media (max-width: 480px) {
+   #month-year {
+       font-size: 18px;
+   }
+
+   .weekdays div, .days div {
+       padding: 8px 0;
+       font-size: 14px;
+   }
+
+   .right .today-date .event-day {
+       font-size: 1.5rem;
+   }
+
+   .right .today-date .event-date {
+       font-size: 0.9rem;
+   }
+}
