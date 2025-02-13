@@ -330,6 +330,11 @@ body {
    .go-to-container{
       width: 80%;
    }
+   .l-goto{
+      width: 70%;
+      justify-content: space-between;
+   }
+   
 }
 
 @media (max-width: 925px) {
